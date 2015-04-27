@@ -1,0 +1,16 @@
+.row
+    .col-lg-4.col-lg-offset-4
+        .page-header
+            h2 
+                span.glyphicon.glyphicon-log-out 
+                |  Mothafucka' Chat!
+                span.badge.badge-login.pull-right Login to Mothafucka' Chat!
+        .well.well-login
+            .alert.alert-danger(data-ng-show="nameExist")
+                | Ya' fool, this username has been taken, Ya' fool!
+            form(name="loginform", data-ng-submit="enterChat()", novalidate)
+                .form-group(data-ng-class="{ 'has-error': loginform.userName.$dirty && loginform.userName.$invalid }")
+                    label.control-label(for="username") Insert yo' name Mothafucka!
+                    input.form-control(type="text", placeholder="Enter your name", name="userName", data-control-focus="{{isFocus}}", data-ng-model="userName",required)
+                    
+                button.btn.btn-info(type="submit", data-ng-disabled="loginform.$invalid") Chat with other Mothafuckers!
